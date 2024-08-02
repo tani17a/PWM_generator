@@ -1,0 +1,35 @@
+|PWM_Generator
+clock => clock.IN4
+decr_duty => decr_duty.IN1
+incr_duty => incr_duty.IN1
+PWM_Out <= LessThan4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_Generator|DFF_PWM:ff1
+clk => q~reg0.CLK
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_Generator|DFF_PWM:ff2
+clk => q~reg0.CLK
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_Generator|DFF_PWM:ff3
+clk => q~reg0.CLK
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PWM_Generator|DFF_PWM:ff4
+clk => q~reg0.CLK
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

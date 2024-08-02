@@ -1,0 +1,11 @@
+vsim work.tb
+# vsim work.tb 
+# Start time: 23:58:52 on Jul 30,2024
+# Loading work.tb
+# Loading work.PWM_Generator
+# Loading work.DFF_PWM
+add wave sim:/tb/PWM/*
+run -all
+# WARNING: No extended dataflow license exists
+# End time: 00:01:38 on Jul 31,2024, Elapsed time: 0:02:46
+# Errors: 0, Warnings: 1

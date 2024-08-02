@@ -1,0 +1,82 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/12hr _clk
+vDFF_PWM
+Z0 !s110 1722364091
+!i10b 1
+!s100 ceeY]OPGB^M0SA<J8TNnf1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IRkbSP?Kkb;ii[RAKkZa]o3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/PWM_Generator
+Z4 w1722362200
+Z5 8C:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/PWM_Generator/PWM_generator.v
+Z6 FC:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/PWM_Generator/PWM_generator.v
+!i122 9
+L0 46 8
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1722364091.000000
+Z9 !s107 C:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/PWM_Generator/PWM_generator.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/tania/Desktop/vlsi/4583-Verilog_labs/Verilog_labs/projects/PWM_Generator/PWM_generator.v|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+n@d@f@f_@p@w@m
+vPWM_Generator
+R0
+!i10b 1
+!s100 8`HKZBAdYA5FSzgUmbNW]0
+R1
+IG]AUeYkES?dC8[:YX]hI23
+R2
+R3
+R4
+R5
+R6
+!i122 9
+L0 1 43
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@p@w@m_@generator
+vtb
+R0
+!i10b 1
+!s100 1eBLR0]f7AlknZk1Z0R=^2
+R1
+IhR>R:1_HMJCNg6GIjVjO:0
+R2
+R3
+w1722364008
+8C:\Users\tania\Desktop\vlsi\4583-Verilog_labs\Verilog_labs\projects\PWM_Generator\PWM_tb
+FC:\Users\tania\Desktop\vlsi\4583-Verilog_labs\Verilog_labs\projects\PWM_Generator\PWM_tb
+!i122 10
+L0 2 24
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:\Users\tania\Desktop\vlsi\4583-Verilog_labs\Verilog_labs\projects\PWM_Generator\PWM_tb|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\tania\Desktop\vlsi\4583-Verilog_labs\Verilog_labs\projects\PWM_Generator\PWM_tb|
+!i113 1
+R11
+R12

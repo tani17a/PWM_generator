@@ -1,0 +1,411 @@
+Timing Analyzer report for PWM_generator
+Tue Jul 30 23:27:02 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clock'
+ 12. Hold: 'clock'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; PWM_generator                                       ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M40ZM64C4                                          ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 126.69 MHz ; 126.69 MHz      ; clock      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -6.893 ; -47.504       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 1.755 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                                     ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -6.893 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.633      ;
+; -6.736 ; counter_debounce ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.476      ;
+; -6.631 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.371      ;
+; -6.631 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.371      ;
+; -6.536 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.276      ;
+; -6.474 ; counter_debounce ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.214      ;
+; -6.474 ; counter_debounce ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.214      ;
+; -6.274 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.014      ;
+; -6.274 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 7.014      ;
+; -6.206 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.946      ;
+; -6.140 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.880      ;
+; -6.049 ; counter_debounce ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.789      ;
+; -5.962 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.702      ;
+; -5.878 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.618      ;
+; -5.878 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.618      ;
+; -5.849 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.589      ;
+; -5.683 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.423      ;
+; -5.453 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.193      ;
+; -5.380 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.120      ;
+; -5.380 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.120      ;
+; -5.380 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.120      ;
+; -5.151 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.891      ;
+; -4.955 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.695      ;
+; -4.924 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.664      ;
+; -4.861 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.601      ;
+; -4.726 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.466      ;
+; -4.707 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.447      ;
+; -4.664 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.404      ;
+; -4.664 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.404      ;
+; -4.664 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.404      ;
+; -4.645 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.385      ;
+; -4.599 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.339      ;
+; -4.599 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 5.339      ;
+; -4.239 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 4.979      ;
+; -4.174 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 4.914      ;
+; -3.923 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 4.663      ;
+; -2.750 ; freq_counter[0]  ; freq_counter[3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 3.490      ;
+; -2.747 ; freq_counter[0]  ; freq_counter[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 3.487      ;
+; -2.580 ; counter_debounce ; DFF_PWM:ff1|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.320      ;
+; -2.580 ; counter_debounce ; DFF_PWM:ff2|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.320      ;
+; -2.344 ; freq_counter[1]  ; freq_counter[0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 3.084      ;
+; -2.197 ; freq_counter[2]  ; freq_counter[3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.937      ;
+; -2.195 ; freq_counter[2]  ; freq_counter[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.935      ;
+; -2.186 ; freq_counter[0]  ; freq_counter[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.926      ;
+; -2.185 ; freq_counter[0]  ; freq_counter[0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.925      ;
+; -2.177 ; counter_debounce ; DFF_PWM:ff3|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 2.917      ;
+; -2.177 ; counter_debounce ; DFF_PWM:ff4|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 2.917      ;
+; -1.656 ; freq_counter[3]  ; freq_counter[0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.396      ;
+; -1.655 ; freq_counter[3]  ; freq_counter[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.395      ;
+; -1.652 ; freq_counter[3]  ; freq_counter[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.392      ;
+; -1.642 ; freq_counter[3]  ; freq_counter[3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.382      ;
+; -1.602 ; counter_debounce ; counter_debounce ; clock        ; clock       ; 1.000        ; 0.000      ; 2.342      ;
+; -1.478 ; DFF_PWM:ff3|q    ; DFF_PWM:ff4|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 2.218      ;
+; -1.409 ; freq_counter[1]  ; freq_counter[3]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.149      ;
+; -1.407 ; freq_counter[1]  ; freq_counter[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.147      ;
+; -1.403 ; freq_counter[1]  ; freq_counter[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.143      ;
+; -1.380 ; freq_counter[2]  ; freq_counter[0]  ; clock        ; clock       ; 1.000        ; 0.000      ; 2.120      ;
+; -1.089 ; DFF_PWM:ff1|q    ; DFF_PWM:ff2|q    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.829      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                     ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 1.755 ; DFF_PWM:ff1|q    ; DFF_PWM:ff2|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.829      ;
+; 2.046 ; freq_counter[2]  ; freq_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.120      ;
+; 2.069 ; freq_counter[1]  ; freq_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.143      ;
+; 2.073 ; freq_counter[1]  ; freq_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.147      ;
+; 2.075 ; freq_counter[1]  ; freq_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.149      ;
+; 2.144 ; DFF_PWM:ff3|q    ; DFF_PWM:ff4|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.218      ;
+; 2.268 ; counter_debounce ; counter_debounce ; clock        ; clock       ; 0.000        ; 0.000      ; 2.342      ;
+; 2.285 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.359      ;
+; 2.308 ; freq_counter[3]  ; freq_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.382      ;
+; 2.318 ; freq_counter[3]  ; freq_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.392      ;
+; 2.321 ; freq_counter[3]  ; freq_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.395      ;
+; 2.322 ; freq_counter[3]  ; freq_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.396      ;
+; 2.843 ; counter_debounce ; DFF_PWM:ff3|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.917      ;
+; 2.843 ; counter_debounce ; DFF_PWM:ff4|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 2.917      ;
+; 2.851 ; freq_counter[0]  ; freq_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.925      ;
+; 2.852 ; freq_counter[0]  ; freq_counter[1]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.926      ;
+; 2.861 ; freq_counter[2]  ; freq_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.935      ;
+; 2.863 ; freq_counter[2]  ; freq_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.937      ;
+; 3.010 ; freq_counter[1]  ; freq_counter[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.084      ;
+; 3.246 ; counter_debounce ; DFF_PWM:ff1|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.320      ;
+; 3.246 ; counter_debounce ; DFF_PWM:ff2|q    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.320      ;
+; 3.413 ; freq_counter[0]  ; freq_counter[2]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.487      ;
+; 3.416 ; freq_counter[0]  ; freq_counter[3]  ; clock        ; clock       ; 0.000        ; 0.000      ; 3.490      ;
+; 3.430 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.504      ;
+; 3.855 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.929      ;
+; 3.855 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.929      ;
+; 3.855 ; DUTY_CYCLE[3]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 3.929      ;
+; 4.430 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.504      ;
+; 4.618 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.692      ;
+; 4.840 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.914      ;
+; 4.882 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.956      ;
+; 4.905 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 4.979      ;
+; 4.982 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.056      ;
+; 4.991 ; DFF_PWM:ff2|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.065      ;
+; 5.014 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.088      ;
+; 5.014 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.088      ;
+; 5.014 ; DUTY_CYCLE[0]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.088      ;
+; 5.170 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.244      ;
+; 5.307 ; DUTY_CYCLE[1]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.381      ;
+; 5.330 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.404      ;
+; 5.330 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.404      ;
+; 5.330 ; DFF_PWM:ff4|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.404      ;
+; 5.491 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.565      ;
+; 5.621 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.695      ;
+; 5.851 ; counter_debounce ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.925      ;
+; 5.916 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.990      ;
+; 5.916 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.990      ;
+; 5.916 ; DUTY_CYCLE[2]    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 5.990      ;
+; 6.046 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.120      ;
+; 6.046 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.120      ;
+; 6.046 ; DFF_PWM:ff3|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.120      ;
+; 6.105 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.179      ;
+; 6.276 ; counter_debounce ; DUTY_CYCLE[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.350      ;
+; 6.276 ; counter_debounce ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.350      ;
+; 6.276 ; counter_debounce ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.350      ;
+; 6.293 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.367      ;
+; 6.515 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.589      ;
+; 6.666 ; DFF_PWM:ff1|q    ; DUTY_CYCLE[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 6.740      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 144      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 144      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 2     ; 2    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clock  ; clock ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; decr_duty  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; incr_duty  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; PWM_Out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; decr_duty  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; incr_duty  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; PWM_Out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jul 30 23:27:01 2024
+Info: Command: quartus_sta PWM_generator -c PWM_generator
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'PWM_generator.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.893
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.893             -47.504 clock 
+Info (332146): Worst-case hold slack is 1.755
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.755               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4677 megabytes
+    Info: Processing ended: Tue Jul 30 23:27:02 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
