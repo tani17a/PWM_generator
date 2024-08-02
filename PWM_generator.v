@@ -1,5 +1,5 @@
 module PWM_Generator( input clock, decr_duty,incr_duty,
-	output PWM_Out);
+	output wire PWM_Out);
 	
 	wire slow_clock_enable;
 	reg counter_debounce=0;

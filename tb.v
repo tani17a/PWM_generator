@@ -2,14 +2,15 @@
 module tb();
 	reg clk;
 	reg inc;
-	reg dec,out;
+	reg dec;
+	wire out;
 	
 	initial begin
 	 clk=0;
 	 forever #5 clk=~clk;
 	end
 	
-	PWM_Genertor(clk,inc,dec,out);
+	PWM_Generator pw(clk,inc,dec,out);
 	initial begin
 	inc=1;
 	dec=0;
